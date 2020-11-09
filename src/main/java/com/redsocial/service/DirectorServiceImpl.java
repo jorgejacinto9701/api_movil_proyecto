@@ -1,8 +1,5 @@
 package com.redsocial.service;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,24 +12,10 @@ public class DirectorServiceImpl implements DirectorService{
 	@Autowired
 	private DirectorRepository repository;
 	
-	@Override
-	public List<Director> listaDirector() {
-		return repository.findAll();
-	}
 
 	@Override
-	public Director insertaActualizaDirector(Director obj) {
+	public Director inserta(Director obj) {
 		return repository.save(obj);
-	}
-
-	@Override
-	public void eliminaDirectorPorId(int id) {
-		repository.deleteById(id);
-	}
-
-	@Override
-	public Optional<Director> buscaDirectorPorId(int id) {
-		return repository.findById(id);
 	}
 
 }
